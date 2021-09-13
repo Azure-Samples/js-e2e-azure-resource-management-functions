@@ -1,57 +1,57 @@
-# Project Name
+# JavaScript end-to-end Azure Function to manage Azure
 
-(short, 1-3 sentenced, description of the project)
+A simple Azure Function app with three API endpoints:
+
+* [POST,DELETE] http://localhost:7071/api/resource-group
+* [GET] http://localhost:7071/api/resource-groups
+* [GET] http://localhost:7071/api/resources
 
 ## Features
 
-This project framework provides the following features:
-
-* Feature 1
-* Feature 2
-* ...
+* List all resource groups in a subscription
+* List all resources in a subscription
+* List all resources in a resource group
+* Create a resource group
+* Delete a resource group
 
 ## Getting Started
 
-### Prerequisites
+### Installation Prerequisites
 
-(ideally very short, if any)
+* Node.js LTS (14+)
 
-- OS
-- Library version
-- ...
+### Environment Variables
+
+Environments:
+* Local development uses [./local.settings.json](./local.settings.json)
+* Remote development uses Azure Function Configuration settings
+
+The following environment variables must be set:
+* "AZURE_CLIENT_ID": "",
+* "AZURE_CLIENT_SECRET": "",
+* "AZURE_SUBSCRIPTION_ID":"",
+* "AZURE_TENANT_ID":""
+
+Do not change the names of the variables.
 
 ### Installation
 
-(ideally very short)
+- npm install 
 
-- npm install [package name]
-- mvn install
-- ...
+### Quickstart with local development 
 
-### Quickstart
-(Add steps to get up and running quickly)
+1. Run the following bash command:
 
-1. git clone [repository clone url]
-2. cd [respository name]
-3. ...
+    ```bash
+    npm start
+    ```
 
-
-## Demo
-
-A demo app is included to show how to use the project.
-
-To run the demo, follow these steps:
-
-(Add steps to start up the demo)
-
-1.
-2.
-3.
+1. Wait until the local runtime displays the routes with methods.
+1. Query the APIs with HTTP.
 
 ## Resources
 
-(Any additional resources or related projects)
-
-- Link to supporting information
-- Link to similar sample
-- ...
+- [Azure Functions](https://docs.microsoft.com/azure/azure-functions/)
+- [Azure SDK for JavaScript](https://docs.microsoft.com/azure/developer/javascript/azure-sdk-library-package-index)
+- [Azure SDK for Identity (DefaultAzureCredential)](https://docs.microsoft.com/javascript/api/overview/azure/identity-readme?view=azure-node-latest)
+- [Azure SDK for Azure Resource Groups](https://docs.microsoft.com/javascript/api/overview/azure/arm-resources-readme)
