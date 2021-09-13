@@ -3,7 +3,17 @@ import {
   listResourceBySubscription,
   listResourceByResourceGroup,
 } from "../lib/azure-resource";
+/*
 
+Get resources in a subscription
+
+curl http://localhost:7071/api/resources
+
+Get resources in a resource group
+
+curl http://localhost:7071/api/resources?resourceGroupName=REPLACE-WITH-YOUR-RESOURCE-GROUP-NAME
+
+*/
 const httpTrigger: AzureFunction = async function (
   context: Context,
   req: HttpRequest

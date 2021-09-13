@@ -1,6 +1,13 @@
 import { AzureFunction, Context, HttpRequest } from "@azure/functions"
 import { listResourceGroups } from "../lib/azure-resource-groups";
 
+/*
+
+Get Resource Groups:
+
+curl http://localhost:7071/api/resource-groups
+
+*/
 const httpTrigger: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
 
     try{
