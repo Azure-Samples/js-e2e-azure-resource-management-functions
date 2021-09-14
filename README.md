@@ -49,6 +49,32 @@ Do not change the names of the variables.
 1. Wait until the local runtime displays the routes with methods.
 1. Query the APIs with HTTP.
 
+## cURL commands
+
+Once you deploy your Azure Function to Azure, use the following cURL commands to request the APIs. Replace `YOUR-RESOURCE_NAME` with your own resource name.
+
+### Add a resource group to your subscription
+
+```bash
+curl -X POST https://YOUR-RESOURCE_NAME.azurewebsites.net/api/resource-group \
+  -H 'Content-Type: application/json' \
+  -d '{"resourceGroupName":"REPLACE-WITH-YOUR-RESOURCE-GROUP-NAME","resourceGroupLocation":"westus"}'
+```
+  
+### Delete a resource group from your subscription  
+
+```bash
+curl -X DELETE https://YOUR-RESOURCE_NAME.azurewebsites.net/api/resource-group \
+  -H 'Content-Type: application/json' \
+  -d '{"resourceGroupName":"REPLACE-WITH-YOUR-RESOURCE-GROUP-NAME"}'
+```
+
+### Get all resource groups in your subscription
+
+```bash
+curl https://YOUR-RESOURCE_NAME.azurewebsites.net/api/resource-groups
+```
+
 ## Resources
 
 - [Azure Functions](https://docs.microsoft.com/azure/azure-functions/)
