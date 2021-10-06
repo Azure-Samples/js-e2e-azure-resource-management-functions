@@ -23,7 +23,7 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
         };
     } catch (err) {
 
-        console.log(`No resource groups found: ${JSON.stringify(err)}`);
+        context.log(`No resource groups found: ${JSON.stringify(err)}`);
 
         context.res = {
             status: 500,
