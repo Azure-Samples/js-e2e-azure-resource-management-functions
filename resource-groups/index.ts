@@ -13,7 +13,7 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
     try{
         const list = await listResourceGroups();
 
-        console.log(`${(list && list.length) ? list.length : 0} resource groups found`);
+        context.log(`${(list && list.length) ? list.length : 0} resource groups found`);
 
         context.res = {
             body: {
