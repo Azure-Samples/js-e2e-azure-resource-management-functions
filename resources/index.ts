@@ -26,7 +26,7 @@ const httpTrigger: AzureFunction = async function (
     switch (req.method) {
       case "GET":
         if (name) {
-          console.log(`called ${name}`);
+          context.log(`called ${name}`);
           results = await listResourceByResourceGroup(name);
         } else {
           results = await listResourceBySubscription();
@@ -40,7 +40,7 @@ const httpTrigger: AzureFunction = async function (
       body: results,
     };
   } catch (err) {
-    console.log(JSON.stringify(err));
+    context.log(JSON.stringify(err));
     context.res = {
       status: 500,
       body: err,
