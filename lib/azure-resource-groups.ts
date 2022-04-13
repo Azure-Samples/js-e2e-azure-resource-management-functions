@@ -28,5 +28,5 @@ export const createResourceGroup = async (resourceGroupName: string, location: s
     );
 }
 export const deleteResourceGroup = async (resourceGroupName: string) =>{
-    return await resourceManagement.resourceGroups.deleteMethod(resourceGroupName);
+    return await resourceManagement.resourceGroups.beginDeleteAndWait(resourceGroupName);
 }   
