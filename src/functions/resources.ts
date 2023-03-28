@@ -1,14 +1,3 @@
-import {
-  app,
-  HttpRequest,
-  HttpResponseInit,
-  InvocationContext
-} from '@azure/functions';
-import {
-  listResourceBySubscription,
-  listResourceByResourceGroup
-} from '../lib/azure-resource';
-import { processError } from '../lib/error';
 /*
 
 Get resources in a subscription
@@ -20,6 +9,19 @@ Get resources in a resource group
 curl http://localhost:7071/api/resources?resourceGroupName=REPLACE-WITH-YOUR-RESOURCE-GROUP-NAME
 
 */
+
+import {
+  app,
+  HttpRequest,
+  HttpResponseInit,
+  InvocationContext
+} from '@azure/functions';
+import {
+  listResourceBySubscription,
+  listResourceByResourceGroup
+} from '../lib/azure-resource';
+import { processError } from '../lib/error';
+
 export async function resources(
   request: HttpRequest,
   context: InvocationContext

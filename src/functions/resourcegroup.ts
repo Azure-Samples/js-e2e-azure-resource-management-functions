@@ -1,3 +1,20 @@
+/*
+-----------------------------------------------------------------------------------
+Create Resource Group:
+
+curl -X POST 'http://localhost:7071/api/resourcegroup?name=my-test-1&location=westus'
+
+curl -X POST 'http://localhost:7071/api/resourcegroup?name=my-test-1&location=westus' \
+  -H 'content-type: application/json' \
+  -d '{"tags": {"a":"b"}}'
+
+  -----------------------------------------------------------------------------------
+Delete Resource Group
+
+curl -X DELETE 'http://localhost:7071/api/resourcegroup?name=my-test-1' \
+  -H 'Content-Type: application/json'
+
+*/
 import {
   app,
   HttpRequest,
@@ -10,24 +27,8 @@ import {
 } from '../lib/azure-resource-groups';
 import { processError } from '../lib/error';
 import { ResourceGroup } from '@azure/arm-resources';
-/*
------------------------------------------------------------------------------------
-Create Resource Group:
 
-curl -X POST 'http://localhost:7071/api/resource-group?name=my-test-1&location=westus'
-
-curl -X POST 'http://localhost:7071/api/resource-group?name=my-test-1&location=westus' \
-  -H 'content-type: application/json' \
-  -d '{"tags": {"a":"b"}}'
-
-  -----------------------------------------------------------------------------------
-Delete Resource Group
-
-curl -X DELETE 'http://localhost:7071/api/resource-group?name=my-test-1' \
-  -H 'Content-Type: application/json'
-
-*/
-export async function resourceGroup(
+export async function resourcegroup(
   request: HttpRequest,
   context: InvocationContext
 ): Promise<HttpResponseInit> {
@@ -83,8 +84,8 @@ export async function resourceGroup(
   }
 }
 
-app.http('resource-group', {
+app.http('resourcegroup', {
   methods: ['DELETE', 'POST'],
   authLevel: 'anonymous',
-  handler: resourceGroup
+  handler: resourcegroup
 });

@@ -1,3 +1,9 @@
+/*
+Get resources in a resource group
+
+curl http://localhost:7071/api/resource-groups
+*/
+
 import {
   app,
   HttpRequest,
@@ -8,13 +14,8 @@ import { listResourceGroups } from '../lib/azure-resource-groups';
 import { processError } from '../lib/error';
 import { ResourceGroup } from '@azure/arm-resources';
 
-/*
-Get resources in a resource group
 
-curl http://localhost:7071/api/resource-groups
-*/
-
-export async function resourceGroups(
+export async function resourcegroups(
   request: HttpRequest,
   context: InvocationContext
 ): Promise<HttpResponseInit> {
@@ -40,8 +41,8 @@ export async function resourceGroups(
   }
 }
 
-app.http('resource-groups', {
+app.http('resourcegroups', {
   methods: ['GET'],
   authLevel: 'anonymous',
-  handler: resourceGroups
+  handler: resourcegroups
 });
