@@ -3,7 +3,8 @@ Get resources in a resource group
 
 curl http://localhost:7071/api/resource-groups
 */
-
+// <snippet_resourcegroups>
+import { ResourceGroup } from '@azure/arm-resources';
 import {
   app,
   HttpRequest,
@@ -12,7 +13,6 @@ import {
 } from '@azure/functions';
 import { listResourceGroups } from '../lib/azure-resource-groups';
 import { processError } from '../lib/error';
-import { ResourceGroup } from '@azure/arm-resources';
 
 
 export async function resourcegroups(
@@ -46,3 +46,4 @@ app.http('resourcegroups', {
   authLevel: 'anonymous',
   handler: resourcegroups
 });
+// </snippet_resourcegroups>

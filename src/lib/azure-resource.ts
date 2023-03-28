@@ -1,6 +1,6 @@
 // Include npm dependencies
-import { DefaultAzureCredential } from '@azure/identity';
 import { Resource, ResourceManagementClient } from '@azure/arm-resources';
+import { DefaultAzureCredential } from '@azure/identity';
 import { getSubscriptionId } from './environment-vars';
 
 const subscriptionId = getSubscriptionId();

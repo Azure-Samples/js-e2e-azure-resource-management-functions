@@ -15,6 +15,8 @@ curl -X DELETE 'http://localhost:7071/api/resourcegroup?name=my-test-1' \
   -H 'Content-Type: application/json'
 
 */
+// <snippet_resourcegroup>
+import { ResourceGroup } from '@azure/arm-resources';
 import {
   app,
   HttpRequest,
@@ -26,7 +28,6 @@ import {
   deleteResourceGroup
 } from '../lib/azure-resource-groups';
 import { processError } from '../lib/error';
-import { ResourceGroup } from '@azure/arm-resources';
 
 export async function resourcegroup(
   request: HttpRequest,
@@ -89,3 +90,4 @@ app.http('resourcegroup', {
   authLevel: 'anonymous',
   handler: resourcegroup
 });
+// </snippet_resourcegroup>
