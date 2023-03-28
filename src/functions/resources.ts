@@ -9,7 +9,7 @@ Get resources in a resource group
 curl http://localhost:7071/api/resources?resourceGroupName=REPLACE-WITH-YOUR-RESOURCE-GROUP-NAME
 
 */
-
+// <snippet_resources>
 import {
   app,
   HttpRequest,
@@ -17,8 +17,7 @@ import {
   InvocationContext
 } from '@azure/functions';
 import {
-  listResourceBySubscription,
-  listResourceByResourceGroup
+  listResourceByResourceGroup, listResourceBySubscription
 } from '../lib/azure-resource';
 import { processError } from '../lib/error';
 
@@ -48,3 +47,4 @@ app.http('resources', {
   authLevel: 'anonymous',
   handler: resources
 });
+// </snippet_resources>
