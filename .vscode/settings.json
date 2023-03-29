@@ -2,8 +2,7 @@
     "azureFunctions.deploySubpath": ".",
     "azureFunctions.postDeployTask": "npm install (functions)",
     "azureFunctions.projectLanguage": "TypeScript",
-    "azureFunctions.projectRuntime": "~4",
+    "azureFunctions.projectRuntime": "~3",
     "debug.internalConsoleOptions": "neverOpen",
-    "azureFunctions.projectLanguageModel": 4,
     "azureFunctions.preDeployTask": "npm prune (functions)"
 }
