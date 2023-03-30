@@ -18,9 +18,7 @@ A simple Azure Function app with three API endpoints:
 
 ### Installation Prerequisites
 
-* Node.js LTS (18 or above) - using the v2 programming model of Azure Functions
-* Azure Functions Core tools v4.0.5095 or above - `npm install -g azure-functions-core-tools@4 --unsafe-perm true`
-* Azure Functions VSCode extension v1.10.4 or above
+* Node.js LTS (14+)
 
 ### Environment Variables
 
