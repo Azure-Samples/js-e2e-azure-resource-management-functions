@@ -2,8 +2,8 @@
 
 A simple Azure Function app with three API endpoints:
 
-* [POST,DELETE] http://localhost:7071/api/resource-group
-* [GET] http://localhost:7071/api/resource-groups
+* [POST,DELETE] http://localhost:7071/api/resourcegroup
+* [GET] http://localhost:7071/api/resourcegroups
 * [GET] http://localhost:7071/api/resources
 
 ## Features
