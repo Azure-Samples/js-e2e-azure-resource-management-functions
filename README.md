@@ -58,23 +58,23 @@ Once you deploy your Azure Function to Azure, use the following cURL commands to
 ### Add a resource group to your subscription
 
 ```bash
-curl -X POST https://YOUR-RESOURCE_NAME.azurewebsites.net/api/resource-group \
+curl -X POST https://YOUR-RESOURCE_NAME.azurewebsites.net/api/resourcegroup \
   -H 'Content-Type: application/json' \
-  -d '{"resourceGroupName":"REPLACE-WITH-YOUR-RESOURCE-GROUP-NAME","resourceGroupLocation":"westus"}'
+  -d '{"name":"REPLACE-WITH-YOUR-RESOURCE-GROUP-NAME","location":"westus"}'
 ```
   
 ### Delete a resource group from your subscription  
 
 ```bash
-curl -X DELETE https://YOUR-RESOURCE_NAME.azurewebsites.net/api/resource-group \
+curl -X DELETE https://YOUR-RESOURCE_NAME.azurewebsites.net/api/resourcegroup \
   -H 'Content-Type: application/json' \
-  -d '{"resourceGroupName":"REPLACE-WITH-YOUR-RESOURCE-GROUP-NAME"}'
+  -d '{"name":"REPLACE-WITH-YOUR-RESOURCE-GROUP-NAME"}'
 ```
 
 ### Get all resource groups in your subscription
 
 ```bash
-curl https://YOUR-RESOURCE_NAME.azurewebsites.net/api/resource-groups
+curl https://YOUR-RESOURCE_NAME.azurewebsites.net/api/resourcegroups
 ```
 
 ## Resources
